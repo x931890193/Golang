@@ -28,6 +28,6 @@ func main() {
 	e, f := 30, 40
 
 	fmt.Println("a=", a, "b=", b, "c=", c, "d=", d)
-	fmt.Printf("a = %T", "b = %d", "c = %d", "d = %d", "e = %d", "f = %d", a, b, d, e, f)
+	fmt.Printf("a = %T, b = %d, c = %d, d = %d, e = %d, f = %d", a, b, d, e, f)
 
 }
