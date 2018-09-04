@@ -12,6 +12,7 @@ func main() {
 
 	var a int
 	a = 10 // 变量赋值
+	a = 20 // 变量赋值可以使用多次
 	fmt.Println(a)
 	var b int = 10 // 初始化 声明 赋值
 	fmt.Println(b)
@@ -19,5 +20,14 @@ func main() {
 	c := 30
 	// %T 打印变量的所属类型
 	fmt.Printf("c: type is %T\n", c)
-	fmt.Println("Hello, Go!", a, b, c)
+	d := 20 // 声明定义的变量 必须要使用
+	// d := 30 // 自动推导自动使用一次
+	fmt.Println("Hello, Go!", a, b, c, d)
+	// fmt.Ptintf  格式化输出  “a = %d\n”, a  \n换行
+	// fmt.Println  一段一段处理， 自动换行
+	e, f := 30, 40
+
+	fmt.Println("a=", a, "b=", b, "c=", c, "d=", d)
+	fmt.Printf("a = %T", "b = %d", "c = %d", "d = %d", "e = %d", "f = %d", a, b, d, e, f)
+
 }
