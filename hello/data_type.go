@@ -70,5 +70,8 @@ func main() {
 	com = 2.1 + 2.14i
 	fmt.Println("com=", com)
 	fmt.Printf("com: type is %T\n", com)
+	// 自动推导类型
+	t2 := 2.15 + 3.15i
+	fmt.Printf("t2 type is %T\n", t2)
 
 }
