@@ -23,5 +23,5 @@ func main() {
 
 	defer fmt.Println("33333333")
 
-	// defer从下到上执行  最下的先执行 多个defer的执行顺序 不管程序有没有错
+	// defer从下到上执行  最下的先执行 多个defer的执行顺序 不管程序有没有错s
 }
