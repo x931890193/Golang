@@ -1,6 +1,8 @@
 package main //必须有一个main包 程序入口 有且只有一个
 //  一个文件夹只能有一个main包  一个工程只能有一个主函数
-import "fmt" // fmt.Printn   导入包 以后必须要使用
+import (
+	"fmt"
+) // fmt.Println   导入包 以后必须要使用
 // 变量声明也必须用
 
 func main() {
