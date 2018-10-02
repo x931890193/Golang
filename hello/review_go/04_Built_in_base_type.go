@@ -8,7 +8,7 @@ import (
 
 func main(){
     fmt.Println("1,Boolean类型, true or false")
-    fmt.Println("2.int, unit类型, 长度相同,具体长度根据编译器实现", "int8, int16,int32","tune==int32", "byte==unit8")
+    fmt.Println("2.int, unit类型, 长度相同,具体长度根据编译器实现", "int8, int16,int32","tune==int32", "byte==uint8")
     // go 强类型语言, 不同类型的数据不能进行运算
     fmt.Println("3.浮点类型, float32, float64")
     fmt.Println("4.complex, 复数 ai+bj")

@@ -3,7 +3,7 @@ package main
 import (
     "fmt"
 )
-var help_text string=`Go程序设计的一些规则
+var HelpText string=`Go程序设计的一些规则
 
 Go之所以会那么简洁，是因为它有一些默认的行为：
 
@@ -12,9 +12,12 @@ Go之所以会那么简洁，是因为它有一些默认的行为：
 `
 
 func main(){
-    fmt.Print(help_text)
+    fmt.Print(HelpText)
+    fmt.Println("-----------------")
     iamarray()
+    fmt.Println("-----------------")
     iamdynamic_array()
+    fmt.Println("-----------------")
 }
 
 
@@ -48,7 +51,5 @@ func iamdynamic_array(){
 
 
 }
-
-
 
 
