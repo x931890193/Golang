@@ -11,7 +11,11 @@ func DivZero(x int) {
 
 func main() {
 	fmt.Println("hello world")
-
+	defer func(){
+		if x := recover(); x != nil {
+		fmt.Println("i got you")
+	}
+	}() // 捕获恐慌 哈哈哈
 	// 延迟调用， 在主函数结束之前调用
 	defer fmt.Println("bye world!") // 最后再调用
 
@@ -19,7 +23,7 @@ func main() {
 	defer fmt.Println("11111111")
 	defer fmt.Println("22222222")
 	// 调用一个零除
-	defer DivZero(0)
+	defer DivZero(0) // 产生panic 上边的recover 捕获程序不崩溃
 
 	defer fmt.Println("33333333")
 
