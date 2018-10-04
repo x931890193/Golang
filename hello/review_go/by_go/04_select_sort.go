@@ -12,6 +12,7 @@ func main() {
 func SelectSort(arr []int) []int {
 	num := len(arr)
 	for i := 0; i < num; i++ {
+		fmt.Println(arr)
 		min := i
 		for j := i + 1; j < num; j++ {
 			if arr[j] < arr[min] {

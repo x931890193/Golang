@@ -9,8 +9,10 @@ func main() {
 }
 
 func InsertSort(arr []int) []int {
+
 	num := len(arr)
 	for i := 1; i < num; i++ {
+		fmt.Println(arr)
 		min := arr[i]
 		j := i - 1
 		for j >= 0 && arr[j] >= min {
