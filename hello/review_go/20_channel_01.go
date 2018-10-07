@@ -22,20 +22,20 @@ var cache_ch1 chan int = make(chan int, 3) // 声明一个有缓冲的信道 , �
 //  buffered channel.
 func main() {
 	ch2 := make(chan string)
-	go Demo1()    // 开启 goroutine
+	go Demo1()                   // 开启 goroutine
 	fmt.Println(len(ch1), <-ch1) // 从管道中读取数据, 无缓冲的管道, len永远是0
 	go func(msg string) {
 		ch2 <- msg // 放入管道
 	}("ping!")
 	fmt.Println(<-ch2) // 读取数据
 
-	Demo2()  // 正常调用函数
+	Demo2() // 正常调用函数
 	fmt.Println("-------------------")
 	buffered_chan := make(chan string, 10)
 	go Demo3(buffered_chan) // 开启goroutine 参数为 channel
 	for v := range buffered_chan {
-// 是range不等到信道关闭是不会结束读取的。也就是如果缓冲信道干涸了，那么range就会阻塞当前goroutine, 所以死锁.
-		if len(buffered_chan) == 0 {  // 判断channel的长度  如果长度为0,跳出循环
+		// 是range不等到信道关闭是不会结束读取的。也就是如果缓冲信道干涸了，那么range就会阻塞当前goroutine, 所以死锁.
+		if len(buffered_chan) == 0 { // 判断channel的长度  如果长度为0,跳出循环
 			break
 		}
 		fmt.Println(v)
@@ -43,7 +43,7 @@ func main() {
 	fmt.Println("------------------")
 	buffered_chan2 := make(chan int, 20)
 	go Demo4(buffered_chan2)
-	for v := range buffered_chan2{
+	for v := range buffered_chan2 {
 		fmt.Println(v)
 	}
 
@@ -84,8 +84,8 @@ func Demo3(ch chan string) {
 
 }
 
-func Demo4(ch chan int){
-	for i:=1; i<21; i++{
+func Demo4(ch chan int) {
+	for i := 1; i < 21; i++ {
 		ch <- i
 	}
 	// 被关闭的信道会禁止数据流入, 是只读的。我们仍然可以从关闭的信道中取出数据，但是不能再写入数据了。

@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"C"
+	"fmt"
+)
 
 func main() {
 	//插入排序
@@ -8,6 +11,7 @@ func main() {
 	fmt.Println(InsertSort(arr))
 }
 
+//export InsertSort
 func InsertSort(arr []int) []int {
 
 	num := len(arr)

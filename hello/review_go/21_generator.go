@@ -20,7 +20,7 @@ func my_range() chan int {
 
 	go func() {
 		for i := 0; ; i++ {
-			ch <- i    // 直到信道索要数据，才把i添加进信道
+			ch <- i // 直到信道索要数据，才把i添加进信道
 		}
 	}()
 	return ch

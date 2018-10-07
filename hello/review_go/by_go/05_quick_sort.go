@@ -1,6 +1,7 @@
 package main
 
 import (
+	"C"
 	"fmt"
 )
 
@@ -10,6 +11,7 @@ func main() {
 	fmt.Println(QuickSort(arr), len(QuickSort(arr)))
 }
 
+//export QuickSort
 func QuickSort(arr []int) []int {
 	if len(arr) == 0 {
 		return []int{}

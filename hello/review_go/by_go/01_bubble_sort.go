@@ -1,18 +1,20 @@
 package main
 
 import (
+	"C"
 	"fmt"
 )
 
+//export BubbleSort
 func BubbleSort(arr []int) []int {
 	// 改进的冒泡排序
 	num := len(arr) //:=自动匹配变量类型
 	for i := 0; i < num; i++ {
 		status := false
-		for j := i + 1; j < num; j++ {
-			if arr[i] > arr[j] {
+		for j:=0; j < num-i-1; j++ {
+			if arr[j] > arr[j+1] {
 				status = true
-				arr[i], arr[j] = arr[j], arr[i]
+				arr[j], arr[j+1] = arr[j+1], arr[j]
 			}
 		}
 		if status == false {

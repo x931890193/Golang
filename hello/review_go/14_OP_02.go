@@ -22,11 +22,11 @@ type Box struct {
 
 type BoxList []Box // a slice of boxes
 
-func (v Box) Volume() Color{
+func (v Box) Volume() Color {
 	return v.color
 }
 
-func (c Box) Setcolor(color byte) int{
+func (c Box) Setcolor(color byte) int {
 	c.color = color
 }
 

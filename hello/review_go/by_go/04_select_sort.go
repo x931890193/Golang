@@ -1,6 +1,7 @@
 package main
 
 import (
+	"C"
 	"fmt"
 )
 
@@ -9,6 +10,7 @@ func main() {
 	fmt.Println(SelectSort(arr))
 }
 
+//export SelectSort
 func SelectSort(arr []int) []int {
 	num := len(arr)
 	for i := 0; i < num; i++ {

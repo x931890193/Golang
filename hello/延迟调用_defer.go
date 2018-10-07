@@ -11,10 +11,10 @@ func DivZero(x int) {
 
 func main() {
 	fmt.Println("hello world")
-	defer func(){
+	defer func() {
 		if x := recover(); x != nil {
-		fmt.Println("i got you")
-	}
+			fmt.Println("i got you")
+		}
 	}() // 捕获恐慌 哈哈哈
 	// 延迟调用， 在主函数结束之前调用
 	defer fmt.Println("bye world!") // 最后再调用

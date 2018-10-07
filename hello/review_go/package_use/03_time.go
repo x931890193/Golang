@@ -36,7 +36,7 @@ func main() {
 	Mytest()
 }
 
-func Mytest(){
+func Mytest() {
 	t := time.Now()
 	fmt.Println(t.Day())
 	// time.After() // 定时执行

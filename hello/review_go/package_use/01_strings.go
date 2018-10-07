@@ -60,18 +60,21 @@ func main() {
 	// strings.Split(s, seq)  返回slice  常用 for_range 处理
 	// 拼接slice 到字符串
 	// strings.Join(sl []string, seq string)
-	Strconv()
-	}
+	//Strconv()
+}
 
-func Strconv(){
+func Strconv() {
 	fmt.Println(666666)
 	// strconv.Itoa() int --> string
 	var a int = 10
 	str_a := strconv.Itoa(a)
 	fmt.Printf("str_a's type is %T\n", str_a)
 
-	var b string="hello"
-	int_b, _:= strconv.Atoi(b)
-	fmt.Printf("int_b's type is %T",int_b)
+	var b string = "hello"
+	int_b, _ := strconv.Atoi(b)
+	fmt.Printf("int_b's type is %T\n", int_b)
+	i, err := strconv.Atoi("-42")
+	s := strconv.Itoa(-42)
+	fmt.Println(i, err, s)
 
-	}
+}

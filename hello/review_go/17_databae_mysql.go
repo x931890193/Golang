@@ -1,20 +1,19 @@
 package main
 
-import(
-    "database/sql"
-    "fmt"
-    _"github.com/go-sql-driver/mysql"
-
+import (
+	"database/sql"
+	"fmt"
+	_ "github.com/go-sql-driver/mysql"
 )
 
-func main(){
-    db,err:=sql.Open("mysql","root:flzx3qc@/test?charset=utf8")
-    fmt.Println(db,err)
-    checkErr(err)
-    // 插入数据
-    stmt, err := db.Prepare("INSERT userinfo SET username=?,departname=?,created=?")
-    checkErr(err)
-    res,err:=stmt.Exec("astaxie", "研发", "2018-10-1")
+func main() {
+	db, err := sql.Open("mysql", "root:flzx3qc@/test?charset=utf8")
+	fmt.Println(db, err)
+	checkErr(err)
+	// 插入数据
+	stmt, err := db.Prepare("INSERT userinfo SET username=?,departname=?,created=?")
+	checkErr(err)
+	res, err := stmt.Exec("astaxie", "研发", "2018-10-1")
 
 	id, err := res.LastInsertId()
 	checkErr(err)
@@ -63,13 +62,11 @@ func main(){
 
 	db.Close()
 
-
-
 }
 
-func checkErr(err error){
-    if err!=nil{
-    panic(err)
-    }
+func checkErr(err error) {
+	if err != nil {
+		panic(err)
+	}
 
 }

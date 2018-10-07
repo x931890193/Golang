@@ -17,13 +17,13 @@ type Human struct {
 }
 
 type Student struct {
-	Human //匿名字段
+	Human  //匿名字段
 	school string
 	loan   float32
 }
 
 type Employee struct {
-	Human //匿名字段
+	Human   //匿名字段
 	company string
 	money   float32
 }
@@ -79,8 +79,6 @@ type ElderlyGent interface {
 	SpendSalary(amount float32)
 }
 
-func main(){
-
-
+func main() {
 
 }

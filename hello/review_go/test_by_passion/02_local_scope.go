@@ -9,16 +9,17 @@ package main
 import "fmt"
 
 var a = "A"
+
 func main() {
 	m()
 	n()
 	m()
 }
 
-func m(){
+func m() {
 	fmt.Println(a)
 }
-func n(){
+func n() {
 	a := "a" //local variable
 	fmt.Println(a)
 }

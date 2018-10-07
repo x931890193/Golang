@@ -11,7 +11,7 @@ func main() {
 
 func BinarySearch(arr []int, key int) int {
 	low := 0
-	high := len(arr)-1
+	high := len(arr) - 1
 	for arr[low] <= arr[high] {
 		if key > low {
 			low = key
