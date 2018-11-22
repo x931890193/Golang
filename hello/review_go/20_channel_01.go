@@ -4,7 +4,7 @@ author: sato
 mail: ysudqfs@163.com
 life is short, you need go go go
 */
-// goroutine  微线程 协程
+// goroutine  微线程 协程 python coroutine
 package main
 
 import "fmt"

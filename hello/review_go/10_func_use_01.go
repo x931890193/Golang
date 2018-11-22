@@ -5,9 +5,9 @@ import (
 	//    "file"
 )
 
-var a, b, c int
 
 func main() {
+	var a, b, c int
 	fmt.Println("请输入a:")
 	fmt.Scan(&a)
 	fmt.Println("请输入b:")
