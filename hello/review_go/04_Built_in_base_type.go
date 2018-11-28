@@ -18,7 +18,7 @@ func main() {
 	test()
 	change_string()
 	error_type()
-	var  t []byte=[]byte{'a'}
+	var t []byte = []byte{'a'}
 	fmt.Println(t)
 	g := []byte("dsadasdas")
 	fmt.Println(g)
@@ -52,7 +52,4 @@ func error_type() {
 		fmt.Println(err)
 	}
 
-
 }
-
-

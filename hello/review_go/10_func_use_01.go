@@ -5,7 +5,6 @@ import (
 	//    "file"
 )
 
-
 func main() {
 	var a, b, c int
 	fmt.Println("请输入a:")

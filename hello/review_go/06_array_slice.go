@@ -22,7 +22,7 @@ func main() {
 }
 
 func iamarray() {
-	var arr [20]int=[20]int{1:20} // 声明一个int类型的数组, 长度为20
+	var arr [20]int = [20]int{1: 20} // 声明一个int类型的数组, 长度为20
 	arr[0] = 1
 	arr[2] = 2
 	// 数组不能改变长度, 当作为参数传入函数的时候 传递的是副本

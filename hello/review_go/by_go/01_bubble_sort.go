@@ -11,7 +11,7 @@ func BubbleSort(arr []int) []int {
 	num := len(arr) //:=自动匹配变量类型
 	for i := 0; i < num; i++ {
 		status := false
-		for j:=0; j < num-i-1; j++ {
+		for j := 0; j < num-i-1; j++ {
 			if arr[j] > arr[j+1] {
 				status = true
 				arr[j], arr[j+1] = arr[j+1], arr[j]

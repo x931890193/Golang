@@ -18,6 +18,6 @@ func defer_call() {
 			fmt.Println("i got you")
 		}
 	}()
-	panic("触发异常") // 随机的!
+	panic("触发异常") //
 
 }

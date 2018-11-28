@@ -11,7 +11,7 @@ import "fmt"
 func main() {
 	// fibnocci 数列 递归实现
 	result := 0
-	for i := 0; i < 10; i++ {
+	for i := 0; i <= 10; i++ {
 		result = fibonacci(i)
 		fmt.Println(result)
 	}
@@ -20,7 +20,7 @@ func main() {
 
 func fibonacci(n int) int {
 	if n <= 1 {
-		return 1
+		return n
 	} else {
 		return fibonacci(n-1) + fibonacci(n-2)
 	}

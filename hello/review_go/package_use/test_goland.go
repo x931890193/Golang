@@ -11,7 +11,7 @@ func main() {
 	for _, v := range os.Args {
 		fmt.Println(v)
 	}
-	//os.Chdir("./")
+	os.Chdir("./")
 }
 
 func test() {

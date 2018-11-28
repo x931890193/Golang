@@ -13,8 +13,8 @@ import (
 	"io/ioutil"
 	"mime/multipart"
 	"net/http"
-	"net/url"
 	"os"
+	"strings"
 )
 
 var ch chan int = make(chan int)
@@ -38,10 +38,11 @@ func main() {
 	//	if err := r.Body.Close(); err != nil{
 	//		fmt.Println(err)
 	//	}
-	count := 10
+	count := 100000
 	for i := 0; i < count; i++ {
 		//go fork()
-		go postFile("/home/kali/Desktop/IMG_0001.JPG", "http://69.171.75.147:3306/baidu_if")
+		go httpDo()
+		//go postFile("/home/kali/Desktop/新建文本.txt", "127.0.0.1:8080/api/student/event/edit")
 	}
 	for i := 0; i < count; i++ {
 		<-ch
@@ -49,7 +50,7 @@ func main() {
 }
 
 func fork() {
-	r, err := http.PostForm(os.Args[1], url.Values{"key": {"Value"}, "id": {"123"}})
+	r, err := http.Get(os.Args[1])
 	//http.POSt
 	if err != nil {
 		fmt.Println(666, err)
@@ -106,4 +107,28 @@ func postFile(filename string, targetUrl string) error {
 	ch <- 0
 	return nil
 
+}
+
+func httpDo() {
+	client := &http.Client{}
+
+	req, err := http.NewRequest("GET", "http://perpetua.hexin.im/api/user/own", strings.NewReader("name=cjb"))
+	if err != nil {
+		// handle error
+	}
+
+	//req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	req.Header.Set("Cookie", "role=super; auth=; exclude_test=false; exclude_zero=true; passport=5bb9e75cb7e8759d13d0c19f3dc1b93683aa7b61")
+
+	resp, err := client.Do(req)
+
+	defer resp.Body.Close()
+
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		// handle error
+	}
+	ch <- 0
+
+	fmt.Println(string(body))
 }

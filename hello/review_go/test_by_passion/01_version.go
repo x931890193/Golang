@@ -8,9 +8,11 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"runtime"
 )
 
 func main() {
 	fmt.Println(runtime.Version()) // runtime包系统版本
+	fmt.Println(os.Geteuid())
 }
