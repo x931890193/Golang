@@ -1,3 +1,8 @@
+// Copyright 2016 The StudyGolang Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+// http://studygolang.com
+// Author: polaris	polaris@studygolang.com
 
 package db
 
@@ -28,6 +33,11 @@ func init() {
 
 	// 启动时就打开数据库连接
 	if err = initEngine(); err != nil {
+		panic(err)
+	}
+
+	// 测试数据库连接是否 OK
+	if err = MasterDB.Ping(); err != nil {
 		panic(err)
 	}
 }
@@ -78,9 +88,7 @@ func TestDB() error {
 	}
 
 	// 初始化 MasterDB
-	Init()
-
-	return nil
+	return Init()
 }
 
 func Init() error {
@@ -132,8 +140,8 @@ func initEngine() error {
 	MasterDB.Logger().SetLevel(core.LogLevel(logLevel))
 
 	// 启用缓存
-	cacher := xorm.NewLRUCacher(xorm.NewMemoryStore(), 1000)
-	MasterDB.SetDefaultCacher(cacher)
+	// cacher := xorm.NewLRUCacher(xorm.NewMemoryStore(), 1000)
+	// MasterDB.SetDefaultCacher(cacher)
 
 	return nil
 }
