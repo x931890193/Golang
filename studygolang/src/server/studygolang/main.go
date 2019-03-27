@@ -1,12 +1,7 @@
-// Copyright 2016 The StudyGolang Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style
-// license that can be found in the LICENSE file.
-// http://studygolang.com
-// Author: polaris	polaris@studygolang.com
-
 package main
 
 import (
+	"github.com/polaris1119/keyword"
 	"global"
 	"http/controller"
 	"http/controller/admin"
@@ -27,7 +22,6 @@ import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/engine/standard"
 	mw "github.com/labstack/echo/middleware"
-	"github.com/polaris1119/keyword"
 	"github.com/polaris1119/logger"
 	thirdmw "github.com/polaris1119/middleware"
 )
@@ -54,7 +48,7 @@ func main() {
 	go logic.Book.ClearRedisUser()
 
 	go ServeBackGround()
-	// go pprof
+	//go pprof
 	Pprof(ConfigFile.MustValue("global", "pprof", "127.0.0.1:8096"))
 
 	e := echo.New()
